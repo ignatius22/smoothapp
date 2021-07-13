@@ -1,0 +1,19 @@
+<h1><%= @album.user.first_name %>'s album</h1>
+<hr>
+
+
+<p>artist name: <%= @album.user.first_name %></p>
+<p>album name: <%= @album.name %></p>
+<p>album photo: <%= image_tag(@album.album_image, width:"400px", height:"200px", class:"card") if @album.album_image.attached? %></p>
+<p>album date: <%= distance_of_time_in_words(@album.created_at, Time.now)%> ago</p>
+
+
+
+<%= link_to  "back", albums_path %>
+
+<%if logged_in?(:admin, :admin) || current_user == @album.user%>
+    <%= link_to  "new album", new_album_path %>
+    <%=link_to 'Delete', album_path(@album), method: :delete, data: {confirm: 'are you sure?'} %>
+<% end %>
+
+

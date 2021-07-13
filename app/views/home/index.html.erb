@@ -1,0 +1,17 @@
+
+  <div class="">
+    
+       <% if current_user %>
+        <%= link_to  "Artists", artists_path %>
+        <%= link_to  "Albums", albums_path %>
+        <%= link_to  "setting", edit_user_registration_path %>
+        <% end %>
+
+        <%if logged_in?(:admin, :admin) || current_user%>
+            <%= link_to  "new album", new_album_path %>
+            <%= link_to  "setting", edit_user_registration_path %>
+        <% end %>
+  
+    
+      <%= @title%>
+  </div>

@@ -1,0 +1,11 @@
+<h1><%= @title %></h1>
+<%= render partial: 'album', collection: @albums%>
+
+<%= link_to  "home", root_path %>
+
+<%if logged_in?(:admin, :admin) || current_user%>
+    <%= link_to  "new album", new_album_path %>
+<% end %>
+
+
+
