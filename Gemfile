@@ -29,7 +29,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem "autoprefixer-rails"
 gem 'bootstrap', '~> 4.5.0'
-
+gem 'travis'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 gem "font-awesome-rails"
